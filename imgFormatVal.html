@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- <link rel="stylesheet" href="jQuerymobile/jquery.mobile-1.4.5.min.css"> -->
+<!-- <script type="text/javascript" src="jQuerymobile/jquery.mobile-1.4.5.min.js"></script> -->
+<style>
+</style>
+</head>
+<script>
+window.onload=function(){
+	$(file).onchange=function(){
+		var path=this.value;//获取上传图片的地址
+		//alert(path);
+		var geshi=path.substr(path.lastIndexOf('.'));//截取“.”后面的字符串
+		//alert(geshi);
+		var lowGeshi=geshi.toLowerCase();//图片格式转化为小写
+		if(lowGeshi==='.jpg'||lowGeshi==='.png'||lowGeshi==='.gif'){//判断需要上传的图片格式
+			alert("上传图片格式正确");
+		}else{
+			alert("上传图片格式不正确");
+		}
+	}
+}
+function $(id){
+	return typeof id==="string"?document.getElementById(id):id;
+}
+</script>
+<body>
+	<form>
+		<label>请选择上传的图片<input type="file" id="file"></label>
+	</form>
+</body>
+</html>
